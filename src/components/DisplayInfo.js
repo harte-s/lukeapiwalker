@@ -17,13 +17,18 @@ const DisplayInfo = () => {
             })
             .catch(err=>{
                 console.log(err)
-                setInfo({error: "These are not the droids you are looking for"})
+                setInfo({error: "These aren't the droids you're looking for"})
             })
     }, [category, id])
 
 
     return (
-        info.error? <h2> {info.error} </h2>
+        info.error?
+        <div>
+            <h2> {info.error} </h2>
+            <img src="https://blogs-images.forbes.com/erikkain/files/2017/08/obi-wan.jpg" alt="Obi-Wan Kenobi" />
+        </div>
+
         :<div className="container">
             {
             category === 'people'?
