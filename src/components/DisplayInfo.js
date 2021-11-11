@@ -15,13 +15,16 @@ const DisplayInfo = () => {
                 console.log(response)
                 setInfo(response.data)
             })
-            .catch(err=>console.log(err))
+            .catch(err=>{
+                console.log(err)
+                setInfo({error: "These are not the droids you are looking for"})
+            })
     }, [category, id])
 
 
     return (
-
-        <div className="container">
+        info.error? <h2> {info.error} </h2>
+        :<div className="container">
             {
             category === 'people'?
             <> 
